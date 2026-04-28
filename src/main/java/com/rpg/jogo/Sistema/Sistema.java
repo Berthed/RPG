@@ -1,7 +1,6 @@
 package com.rpg.jogo.Sistema;
 
 import java.util.Random;
-import java.util.Scanner;
 
 import org.yaml.snakeyaml.scanner.ScannerException;
 
@@ -12,7 +11,6 @@ public class Sistema {
         Random random = new Random();
         int dados = random.nextInt(1, 21);
         return dados;
-        // Dúvida: achamos que não funciona, pois 'void' significa que não vai retornar nada, mas ao tirar o void, o programa da erro
         // Objetivo: esse método deve ser chamado por outros locais do RPG para rodar um D20
     }
     public static boolean verificarAcerto(){
@@ -20,8 +18,10 @@ public class Sistema {
         Sistema.rolarDados20();
         if (Sistema.rolarDados20() >= 10) {
             Sistema.calcularDano();
+            return true;
         } else {
             System.out.println("Você errou o ataque.");
+            return false;
         }
         
     }
