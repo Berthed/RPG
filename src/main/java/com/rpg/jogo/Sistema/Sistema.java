@@ -44,11 +44,13 @@ public class Sistema {
         } else {
             return vitoria = false;
         }
+        // provavelmente a lógica do return está errado
         // se vitoria acontecer, a profundidade aumenta. se vitoria é false, e esse método for chamado, então a dungeon será contabilizada como fail.
     }
     public static int aumentarProfundidade(){
         int profudidade = 0;
         return profudidade++;
+        // provavelmente a lógica do return está errada também.
         // se esse método for chamado, a profudidade aumentará em +1, provavelmente a variavel profundidade não seria criado aqui, mas numa aba "dungeon"
     }
 }
