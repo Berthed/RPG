@@ -7,6 +7,7 @@ import org.yaml.snakeyaml.scanner.ScannerException;
 import com.rpg.jogo.Monstros.Monstro;
 
 public class Sistema {
+    int profudidade = 0;
     public static int rolarDados20(){
         Random random = new Random();
         int dados = random.nextInt(1, 21);
@@ -36,21 +37,18 @@ public class Sistema {
         // A gente ficou um pouco travado de fazer esse, por depender da classe personagem
         // usamos objetos hipoteticos. Objetivo: se a defesa do mob for maior do que a força do personagem, ele deve dar ao menos 1 de dano, recompensando o acerto do dado.
     }
-    public static boolean resultadoDungeon(Monstro m1){
-        boolean vitoria;
+    public static boolean resultadoDungeon(Monstro m1, int profudidade){
         if (m1.vida <= 0) {
-            return vitoria = true;
-            Sistema.aumentarProfundidade();
+            return true;
+            Sistema.aumentarProfundidade(profudidade);
         } else {
-            return vitoria = false;
+            return false;
         }
         // provavelmente a lógica do return está errado
         // se vitoria acontecer, a profundidade aumenta. se vitoria é false, e esse método for chamado, então a dungeon será contabilizada como fail.
     }
-    public static int aumentarProfundidade(){
-        int profudidade = 0;
+    public static int aumentarProfundidade(int profudidade){
         return profudidade++;
-        // provavelmente a lógica do return está errada também.
         // se esse método for chamado, a profudidade aumentará em +1, provavelmente a variavel profundidade não seria criado aqui, mas numa aba "dungeon"
     }
 }
