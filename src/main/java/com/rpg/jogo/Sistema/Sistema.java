@@ -2,12 +2,10 @@ package com.rpg.jogo.Sistema;
 
 import java.util.Random;
 
-import org.yaml.snakeyaml.scanner.ScannerException;
-
 import com.rpg.jogo.Monstros.Monstro;
 
 public class Sistema {
-    int profudidade = 0;
+    int profundidade = 0;
     public static int rolarDados20(){
         Random random = new Random();
         int dados = random.nextInt(1, 21);
@@ -24,7 +22,6 @@ public class Sistema {
             System.out.println("Você errou o ataque.");
             return false;
         }
-        
     }
     public static double calcularDano(Personagem p1, Monstro m1){
         double dano;
@@ -47,8 +44,11 @@ public class Sistema {
         // provavelmente a lógica do return está errado
         // se vitoria acontecer, a profundidade aumenta. se vitoria é false, e esse método for chamado, então a dungeon será contabilizada como fail.
     }
-    public static int aumentarProfundidade(int profudidade){
-        return profudidade++;
+    public int getProfundidade(int profudidade){
+        return profudidade;
+    }
+    public static void aumentarProfundidade(int profudidade){
+        profudidade++;
         // se esse método for chamado, a profudidade aumentará em +1, provavelmente a variavel profundidade não seria criado aqui, mas numa aba "dungeon"
     }
 }
